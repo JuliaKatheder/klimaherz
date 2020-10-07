@@ -1,0 +1,165 @@
+/* 
+Theme Name: Klimaherz
+Version: 1.0 
+Description: Child theme for Woo. 
+Author: Julia Katheder
+Author URI: https://katheder.com
+Template: storefront 
+*/
+
+* {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 600;
+}
+
+ul, ol {
+    margin-left: 25px;
+    color: #333;
+}
+
+li {
+    margin-bottom: 1rem;
+}
+
+.highlight-green, .highlight-yellow, .highlight-red, .entry-title {
+    position: relative;
+    display: inline-block;
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 600;
+}
+
+.highlight-green::before, .highlight-yellow::before, .highlight-red::before, .entry-title::before {
+    content: '';
+    width: 110%;
+    height: 40%;
+    background: #D5EB88;
+    position: absolute;
+    bottom: 0;
+    left: -5%;
+    z-index: -1;
+    border-radius: 15px;
+}
+
+.highlight-yellow, .entry-title {
+    color: #E1402D;
+}
+
+.highlight-yellow::before, .entry-title::before {
+    background: #FFDA00;
+}
+
+.highlight-red::before {
+    background: #E1402D;
+}
+
+.main-navigation {
+    text-align: right;
+}
+
+.site-header {
+    border: none;
+}
+
+.full-width img {
+    width: 100vw;
+    max-width: unset;
+    position: relative;
+    left: calc(-50vw + 50%);
+    border-radius: 0;
+}
+
+.home-transparent {
+    background: #D5EB88;
+    padding: 40px;
+    transform: translateY(-50%);
+    border-radius: 3px;
+    position: relative;
+}
+
+.home-transparent::after {
+    content: url(./assets/path.svg);
+    position: absolute;
+    height: auto;
+    width: 100%;
+    right: 50%;
+}
+
+.frame-yellow {
+    border-radius: 3px;
+    transform: translate(-10px, 10px);
+    box-shadow: inset 0 0 0 10px #FFDA00;
+}
+
+.frame-yellow img {
+    transform: translate(20px, -20px);
+}
+
+.donation {
+    position: relative;
+}
+
+.donation::before {
+    content: url(./assets/heart.svg);
+    position: absolute;
+    width: 160%;
+    z-index: -1;
+    top: -90%;
+    right: 0;
+}
+
+.button, .button.alt {
+    background: #e1402d;
+    border-radius: 3px;
+    color: #fff;
+}
+
+#colophon {
+    background: #0A8642;
+    padding: 2em 0em;
+}
+
+
+#colophon * {
+    color: white;
+}
+
+.footer-navigation ul {
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.footer-navigation li {
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 0px;
+}
+
+.footer-navigation a {
+    text-decoration: none;
+}
+
+.site-branding {
+    width: 100px!important;
+    height: 100px!important;
+    margin: 0!important;
+}
+
+@media screen and (min-width: 768px) {
+    .storefront-primary-navigation > .col-full {
+        display: flex;
+    }
+}
+
+.mb-0 {
+    margin-bottom: 0!important;
+}
+
+article[id*=post], .site-main, .content-area {
+    margin-bottom: 0!important;
+}
