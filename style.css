@@ -145,9 +145,23 @@ li {
 }
 
 .site-branding {
-    width: 100px!important;
+    width: auto!important;
     height: 100px!important;
     margin: 0!important;
+    display: flex!important;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.site-branding .custom-logo-link {
+    height: 100%;
+    width: auto;
+}
+
+.site-header .site-branding img {
+    height: 100%;
+    width: auto;
+    max-width: unset;
 }
 
 @media screen and (min-width: 768px) {

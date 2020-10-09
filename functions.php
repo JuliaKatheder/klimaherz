@@ -86,13 +86,13 @@ if ( ! function_exists( 'klimaherz_site_branding' ) ) {
 	function klimaherz_site_branding() {
 		?>
 		<div class="site-branding">
-			<?php klimaherz_site_title_or_logo(); ?>
+			<?php klimaherz_site_title_and_logo(); ?>
 		</div>
 		<?php
 	}
 }
 
-if ( ! function_exists( 'klimaherz_site_title_or_logo' ) ) {
+if ( ! function_exists( 'klimaherz_site_title_and_logo' ) ) {
 	/**
 	 * Display the site title or logo
 	 *
@@ -100,15 +100,14 @@ if ( ! function_exists( 'klimaherz_site_title_or_logo' ) ) {
 	 * @param bool $echo Echo the string or return it.
 	 * @return string
 	 */
-	function klimaherz_site_title_or_logo( $echo = true ) {
+	function klimaherz_site_title_and_logo( $echo = true ) {
 		if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
 			$logo = get_custom_logo();
 			$html = is_home() ? '<h1 class="logo">' . $logo . '</h1>' : $logo;
-		} else {
-			$tag = is_home() ? 'h1' : 'div';
-
-			$html = '<' . esc_attr( $tag ) . ' class="beta site-title"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . esc_html( get_bloginfo( 'name' ) ) . '</a></' . esc_attr( $tag ) . '>';
 		}
+
+		$tag = is_home() ? 'h1' : 'div';
+		$html = $html. '<' . esc_attr( $tag ) . ' class="beta site-title"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . esc_html( get_bloginfo( 'name' ) ) . '</a></' . esc_attr( $tag ) . '>';
 
 		if ( ! $echo ) {
 			return $html;
